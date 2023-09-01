@@ -20,6 +20,7 @@ package org.apache.hadoop.hive.serde2.columnar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -234,7 +235,7 @@ public class TestLazyBinaryColumnarSerDe {
     outerStruct.mArray = new ArrayList<InnerStruct>(2);
     outerStruct.mArray.add(is1);
     outerStruct.mArray.add(is2);
-    outerStruct.mMap = new HashMap<String, InnerStruct>();
+    outerStruct.mMap = new LinkedHashMap<String, InnerStruct>();
     outerStruct.mMap.put(null, new InnerStruct(13, 14l));
     outerStruct.mMap.put(new String("fifteen"), null);
     outerStruct.mStruct = new InnerStruct(null, null);
